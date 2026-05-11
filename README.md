@@ -86,7 +86,7 @@ Using [PM2](https://pm2.keymetrics.io/) is recommended to keep the miner running
 npm install -g pm2
 
 # 2. Start the miner using the ecosystem config
-pm2 start ecosystem.config.js
+pm2 start ecosystem.config.cjs
 
 # 3. View the live logs
 pm2 logs hash256-miner
