@@ -4,7 +4,7 @@ HASH256 proof-of-work CLI miner using NVIDIA CUDA GPU.
 
 **RTX 4090 Test Result: ~4.6 GH/s**
 
-## Principle
+## Nuggets
 
 ```
 keccak256(challenge || nonce) < difficulty
@@ -24,14 +24,14 @@ npm run assets
 npm run build:cuda
 ```
 
-Other GPU architectures (default `sm_89` is for RTX 4090):
+Other GPU builds (default `sm_89` is for RTX 4090):
 
 ```bash
 CUDA_ARCH=sm_86 sh build-cuda.sh   # RTX 3090
 CUDA_ARCH=sm_80 sh build-cuda.sh   # A100
 ```
 
-## Configuration
+## Configuration procedures
 
 ```bash
 cp .env.example .env
@@ -77,7 +77,7 @@ bash scripts/install-linux-service.sh
 journalctl -u hash256-miner -f
 ```
 
-## Stopping
+## Stop
 
 ```bash
 sudo systemctl stop hash256-miner
