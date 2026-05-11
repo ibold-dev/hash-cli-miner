@@ -77,10 +77,34 @@ bash scripts/install-linux-service.sh
 journalctl -u hash256-miner -f
 ```
 
+## Process Management (PM2)
+
+Using [PM2](https://pm2.keymetrics.io/) is recommended to keep the miner running in the background and auto-restart it if it crashes.
+
+```bash
+# 1. Install PM2 globally (if you haven't already)
+npm install -g pm2
+
+# 2. Start the miner using the ecosystem config
+pm2 start ecosystem.config.js
+
+# 3. View the live logs
+pm2 logs hash256-miner
+
+# 4. (Optional) Save the process list so it restarts on server reboot
+pm2 save
+pm2 startup
+```
+
 ## Stop
 
 ```bash
+# Stop systemd service
 sudo systemctl stop hash256-miner
-# or
+
+# Or stop PM2 process
+pm2 stop hash256-miner
+
+# Or kill manually
 pkill -f hash256-cuda-miner
 ```
